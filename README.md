@@ -1,1 +1,1 @@
-# Informatyka Alogorytmiczna 
+# Algorytmy Metaheurystyczne
