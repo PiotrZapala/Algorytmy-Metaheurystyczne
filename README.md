@@ -1,1 +1,1 @@
-# laby
+# Informatyka Alogorytmiczna 
