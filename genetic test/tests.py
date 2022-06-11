@@ -127,11 +127,11 @@ def test():
                 number_of_iterations_without_update1 = number_of_iterations_without_update[ka]
                 best_individual1 = []
                 start = time.time()         
-                best_solutions, parents = genetic_algorithm(str(type_of_selection1), str(type_of_selection_population1), str(type_of_crossing1), str(type_of_mutation1), probability_of_mutation1, size_of_population1, number_of_iterations_without_update1, best_known_solution, parents1, best_solutions1, distance_matrix1)
+                gen = genetic_algorithm(str(type_of_selection1), str(type_of_selection_population1), str(type_of_crossing1), str(type_of_mutation1), probability_of_mutation1, size_of_population1, number_of_iterations_without_update1, best_known_solution, parents1, best_solutions1, distance_matrix1)
                 end = time.time()
                 my_time = end - start
-                for j in range(len(best_solutions)):
-                    best_individual1.append(best_solutions[j].phenotype)
+                for j in range(len(gen.best_solutions)):
+                    best_individual1.append(gen.best_solutions[j].phenotype)
                 minn = min(best_individual1)
                 prd = 100 * ((minn - best_known_solution) / best_known_solution)
                 file.write(str(size_of_population[it]) + ',' + str(probability_of_mutation[jt]) + ',' + str(number_of_iterations_without_update[ka]) + ',' + str(my_time) + ',' + str(minn) +  ',' + str(prd) + '\n')
