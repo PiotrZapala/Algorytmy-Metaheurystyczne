@@ -50,18 +50,6 @@ class population:
 
         return self.set_of_individuals, self.best_solution, self.size_of_population, self.distance_matrix
 
-def migration(parents1, parents2, size):
-    for _ in range(int(size/5)):
-        rand1 = randint(0, size-1)
-        rand2 = randint(0, size-1)
-        ind1 = parents1[rand1]
-        ind2 = parents2[rand2]
-        parents1.append(ind2)
-        parents1.remove(ind1)
-        parents2.append(ind1)
-        parents2.remove(ind2)
-    return parents1, parents2
-
 class genetic_algorithm:
     
     def __init__(self, type_of_selection, type_of_selection_population, type_of_crossing, type_of_mutation, probability_of_mutation, size_of_population, iterations, best_known, parents = [], best_solutions = [], distance_matrix = []):
