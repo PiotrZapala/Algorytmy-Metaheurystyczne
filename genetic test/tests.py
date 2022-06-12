@@ -102,12 +102,9 @@ class genetic_algorithm:
             i += 1
         return self.best_solutions, self.parents
 
-def test():
-    size_of_population = [40, 80, 120, 160, 200, 240]
+def test(file_name, best_known_solution, size_of_population):
     probability_of_mutation = [5, 10, 15, 20, 25]
     number_of_iterations_without_update = [50, 100, 150, 200, 250]
-    best_known_solution = 7544
-    file_name = 'berlin52.tsp'
     type_of_selection1 = 'roulette' 
     type_of_selection_population1 = 'roulette'
     type_of_crossing1 = 'PMX'
@@ -137,4 +134,13 @@ def test():
                 file.write(str(size_of_population[it]) + ',' + str(probability_of_mutation[jt]) + ',' + str(number_of_iterations_without_update[ka]) + ',' + str(my_time) + ',' + str(minn) +  ',' + str(prd) + '\n')
 
 if __name__ == '__main__':
-    test()
+    size1 = [40, 80, 120, 160, 200]
+    best_known_solutions1 =[7542, 5046, 426]
+    file_names1 = ['berlin52.tsp', 'gr48.tsp', 'eil51']
+    for j in range(len(file_names1)):
+        test(file_names1[j], best_known_solutions1[j], size1)
+    size2 = [100, 200, 300, 400, 500]
+    best_known_solutions2 =[6110, 6942, 20749]
+    file_names2 = ['ch130.tsp', 'gr120.tsp', 'kroC100.tsp']
+    for j in range(len(file_names2)):
+        test(file_names2[j], best_known_solutions2[j], size2)
